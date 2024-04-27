@@ -1,0 +1,47 @@
+.twoRow {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: aquamarine;
+}
+
+.courseName {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+.rowCourse {
+    width: 50%;
+    padding: 5px 5px 5px 55px;
+}
+
+.rowLecture {
+    margin-top: 20px;
+    width: 50%;
+    padding: 5px 5px 5px 5px;
+}
+
+.sizeImageCourse {
+    width: 60%;
+}
+
+.price {
+    margin: 10px 0 10px 0;
+}
+.imgLecture {
+    margin-top: 20px;
+    width: 30%;
+}
+
+.titleLectures {
+    margin-top: 10px;
+}
+
+.link {
+    font-size: 1.2rem;
+}
+
+.notLink {
+    color: red;
+}

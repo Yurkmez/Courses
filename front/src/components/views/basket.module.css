@@ -1,0 +1,48 @@
+.empty {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+.mainBlock {
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: aquamarine;
+}
+
+.courseName {
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 2.4rem;
+}
+
+.col_1 {
+    width: 35%;
+}
+.col_2 {
+    width: 45%;
+}
+.col_3 {
+    width: 20%;
+    justify-content: left;
+}
+
+.textTr {
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+.imageSize {
+    width: 50%;
+}
+.imagePosition {
+    text-align: center;
+}
+.buttonBlock {
+    /* padding-left: 100px; */
+    text-align: center;
+}
+
+.buttonLocation {
+    margin: 15px 0 15px 0;
+}

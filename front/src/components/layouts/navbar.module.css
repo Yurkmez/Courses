@@ -1,0 +1,39 @@
+.mainDiv {
+    background-color: lightseagreen;
+    font-size: 1.5rem;
+    /* min-height: 40px; */
+    padding-top: 10px;
+    z-index: 1;
+}
+
+.subDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin-bottom: 0px;
+    margin-left: 30px;
+}
+
+.subDiv2 {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.subDiv a {
+    margin: 0 20px 0 20px;
+    text-decoration: none;
+}
+
+.iconStile {
+    display: flex;
+    margin-left: 10px;
+    margin-right: 40px;
+    justify-content: flex-end;
+    color: rgb(99, 98, 98);
+    padding-top: 5px;
+}
+.iconStile p {
+    margin-left: 10px;
+}

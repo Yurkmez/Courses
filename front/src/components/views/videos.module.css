@@ -1,0 +1,14 @@
+.mainBlock {
+    width: 60%;
+    justify-content: center;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin: auto;
+}
+
+.positionVideo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+}

@@ -1,0 +1,13 @@
+.inputWidth {
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: grey;
+}
+.foggotPass {
+    margin-top: 20px;
+}
+.registered {
+    text-align: right;
+}
