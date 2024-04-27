@@ -1,0 +1,67 @@
+<div class='courseBlock'>
+    <div>
+        <p class='courseHeadInCourse'><strong>Course:{{' '}}
+                {{course.title}}</strong></p>
+    </div>
+    <div class='courseFlex'>
+        <div class='rowCardInCourse'>
+            <div class='imageBoxForCourseInCourse'>
+                <img
+                    class='imageSizeCourseInCourse'
+                    src='{{course.img}}'
+                    alt='{{course.title}}'
+                />
+            </div>
+            <div>
+                <p class='annotation_card'><strong>Annotation:
+                    </strong>
+                    {{course.annotation}}</p>
+                <p class='annotation_card'><strong>Description:
+                    </strong>
+                    {{course.description}}</p>
+                <p class='price'>{{course.price}}</p>
+            </div>
+            <div class='card-action actions'>
+                <a href='/courses'>Go back</a>
+                <a href='/courses/edit/{{course.id}}?allow=true'>Edit course</a>
+                <a href='/course_add/lecture_add/{{course.id}}'>Add lecture</a>
+            </div>
+        </div>
+        {{! *Итерирование массива lecture* }}
+        <div class='rowLectureInCourse'>
+            <p class='lectureHeadInCourse'>Lectures on the course</p>
+            {{#if course.lecture.items}}
+                {{#each course.lecture.items}}
+                    <div>
+                        <div class='lection-title-Block'>
+                            <span class='lection-title'><strong
+                                >{{title}}</strong></span>
+                        </div>
+                        <div class='imageBoxForLectureInCourse'>
+                            <img
+                                class='imageSizeLectureInCourse'
+                                src='{{img}}'
+                                alt='image'
+                            />
+                        </div>
+                    </div>
+                    <div class='lection-action'>
+                        <a href='/courses/editLectures/{{id}}'>Edit lecture</a>
+                        <form
+                            class='formPadding'
+                            action='/courses/deleteLection/{{id}}'
+                            method='POST'
+                        >
+                            <button class='btn btn-primary redButton'>Delete
+                                lecture</button>
+                        </form>
+                    </div>
+                {{/each}}
+            {{else}}
+                <div>
+                    <p class='lectureNoInCourse'>No lectures </p>
+                </div>
+            {{/if}}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+{{#if error}}
+    <p class='alert'>{{error}}</p>
+{{/if}}
+<div class='widthBlock_LectureAddEdit'>
+    <h4>Add new lecture to a course "{{course.title}}"</h4>
+    <form
+        class='formPadding'
+        action='/course_add/lecture_add/{{course.id}}?allow=true'
+        method='POST'
+    >
+        <div>
+            <input
+                style='font-size: 20px'
+                id='title'
+                placeholder='Title'
+                name='title'
+                type='text'
+                class='validate'
+                required
+                value='{{data.title}}'
+            />
+            {{! <label for='title'>Name of lecture</label> }}
+            <span class='helper-text' data-error='input name of lecture'></span>
+        </div>
+        <div>
+            <input
+                id='img'
+                placeholder='URL picture'
+                name='img'
+                type='text'
+                class='validate'
+                required
+                value='{{data.img}}'
+            />
+            <span class='helper-text' data-error='input URL image'></span>
+        </div>
+        <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+        <div class='liningButton_LectureAddEdit'>
+            <a href='/courses/{{course.id}}'>Go back</a>
+            <button class='btn btn-primary'>Add lecture</button>
+        </div>
+    </form>
+</div>

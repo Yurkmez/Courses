@@ -1,0 +1,20 @@
+{{#if basket}}
+    <div class='basketBlock'>
+        <h3>Course in basket</h3>
+        {{! Итерирование массива курсов }}
+        {{#each basket}}
+            <p class='basketFont'><strong>{{increaseKey @key}}.
+                    {{this.courseId.title}}</strong>
+                (author -
+                <strong>
+                    {{this.administratorId.name}})</strong>, data -
+                {{dataFormat this.date}}, customer -
+                <strong>{{this.customerId.name}}</strong>.</p>
+        {{/each}}
+        <div class='basketGoBack'>
+            <a href='/courses'>Go back</a>
+        </div>
+    </div>
+{{else}}
+    <p>No courses in basket</p>
+{{/if}}

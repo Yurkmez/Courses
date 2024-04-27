@@ -1,0 +1,45 @@
+{{#if courses.length}}
+    <div class='marginHead'>
+        <h3>List of courses</h3>
+        {{!-- <h4>Admin: {{req.administrator.name}}</h4> --}}
+    </div>
+    {{! Итерирование массива курсов }}
+    <div class='coursesBlock'>
+        {{#each courses}}
+            <div class='coursesOneBlock'>
+                <h4>Course: {{title}}</h4>
+                <div class='imageBoxInCourses'>
+                    <img
+                        class='imageSizeInCourses'
+                        src='{{img}}'
+                        alt='{{title}}'
+                    />
+                </div>
+                <p class='annotationCourses'><strong>Annotation:
+                    </strong>
+                    {{annotation}}</p>
+                <p class='price'>{{price}}</p>
+                <div class='card-action actions'>
+                    {{! Почему мы используем @root.? Цикл foreach производится на более низком уровне, a переменная ısAuth находится в корневом элементе }}
+                    {{#if @root.isAuth}}
+                        {{! Скрытие ссылки на переход к курсу для админа, который данный курс не создавал. По идее, это надо сделать так: #if userID._id === root.userID, но в handlbars нет инструкции сравнения поэтому в index.js в const hbs exphbs.create мы добавляем helpers: require('./utils/hbs-helpers'), и в файле hbs-helpers прописываем логику сравнения для ifeq  }}
+                        {{#ifeq administratorId._id @root.administratorId}}
+                            <a href='/courses/{{id}}'>Open course</a>
+                            {{!-- <a href='/courses/{{id}}' target='blank'>Open course</a> --}}
+                            <form
+                                class='formPadding'
+                                action='/courses/{{id}}/remove?allow=true'
+                                method='POST'
+                            >
+                                <button class='btn btn-primary redButton'>Delete
+                                    course</button>
+                            </form>
+                        {{/ifeq}}
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{else}}
+    <p>No courses </p>
+{{/if}}

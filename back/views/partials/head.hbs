@@ -1,0 +1,15 @@
+<html lang='en' />
+<head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    {{! https://materializecss.com/getting-started.html }}
+    <link
+        rel='stylesheet'
+        href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'
+    />
+    {{! папка public определена для общего доступа, обращение
+  к файлам там "/<name file>" для этого в undex.js определена "статическая" папка -> 
+    app.use(express.static(path.join(__dirname, 'public'))); }}
+    <link rel='stylesheet' href='/index.css' />
+    <title>{{title}}</title>
+</head>

@@ -1,0 +1,40 @@
+<div id='login' class='col s6'>
+    {{#if loginPassError}}
+        <p class='alert'>{{loginPassError}}</p>
+    {{/if}}
+    <div class='widthAuthBlock'>
+        <h4>Login</h4>
+        <form class='formPadding' action='/authadmin/login' method='POST'>
+            <div>
+                <input
+                    id='email'
+                    name='email'
+                    type='email'
+                    class='validate'
+                    required
+                />
+                <label for='email'>Email</label>
+                <span class='helper-text' data-error='Input email'></span>
+            </div>
+            <div>
+                <input
+                    id='password'
+                    name='password'
+                    type='password'
+                    class='validate'
+                    required
+                />
+                <label for='password'>Password</label>
+                <span class='helper-text' data-error='Enter password'></span>
+            </div>
+            <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+            <button class='btn btn-primary' type='submit'>Enter</button>
+            <h6><a href='/authadmin/reset'>Foggot password?</a></h6>
+        </form>
+        <hr />
+        <h5><a
+                href='/authadmin/register'
+                class='transition-register'
+            >Register</a></h5>
+    </div>
+</div>

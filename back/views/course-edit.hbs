@@ -1,0 +1,79 @@
+<div class='widthBlock_CourseAddEdit'>
+    <h3 class='formPadding'>Edit course: {{course.title}}</h3>
+    <form class='formPadding' action='/courses/edit' method='POST'>
+        <div>
+            <input
+                type='text'
+                style='font-size: 20px'
+                id='title'
+                name='title'
+                class='validate'
+                required
+                value='{{course.title}}'
+            />
+            <label for='title'>Name of course</label>
+            <span class='helper-text' data-error='Input name of coure'></span>
+        </div>
+        <div>
+            <input
+                style='font-size: 20px'
+                id='price'
+                name='price'
+                type='number'
+                class='validate'
+                required
+                min='1'
+                value='{{course.price}}'
+            />
+            <label for='price'>Price of course</label>
+            <span class='helper-text' data-error='input prise'></span>
+        </div>
+        <div>
+            <input
+                style='font-size: 20px'
+                id='img'
+                name='img'
+                type='text'
+                class='validate'
+                required
+                value='{{course.img}}'
+            />
+            <label for='img'>URL picture</label>
+            <span class='helper-text' data-error='input URL picture'></span>
+        </div>
+        <div>
+            <input
+                style='font-size: 20px'
+                id='annotation'
+                name='annotation'
+                type='text'
+                class='validate'
+                required
+                value='{{course.annotation}}'
+            />
+            <label for='title'>Annotation</label>
+            <span class='helper-text' data-error='Input annotation'></span>
+            <div class='description_CourseAddEdit'>
+                <textarea
+                    style='font-size: 18px'
+                    id='description'
+                    name='description'
+                    type='text'
+                    class='validate'
+                    required
+                    value='{{course.description}}'
+                >{{course.description}}
+                </textarea>
+                <label for='description'>Description</label>
+                <span class='helper-text' data-error='input description'></span>
+            </div>
+        </div>
+        <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+        <input type='hidden' name='id' value='{{course.id}}' />
+        <div class='liningButton_CourseAddEdit'>
+            <a href='/courses/{{course.id}}'>Go back</a>
+            <button type='submit' class='btn btn-primary'>Save course</button>
+        </div>
+    </form>
+
+</div>

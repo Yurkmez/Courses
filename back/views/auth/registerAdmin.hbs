@@ -1,0 +1,57 @@
+<div id='register' class='col s6'>
+    {{#if registerError}}
+        <p class='alert'>{{registerError}}</p>
+    {{/if}}
+    <div class='input-width'>
+        <h4>Registration</h4>
+
+        <form class='formPadding' action='/authadmin/register' method='POST'>
+            <div>
+                <input
+                    id='email'
+                    name='email'
+                    type='email'
+                    class='validate'
+                    required
+                />
+                <label for='remail'>Email</label>
+                {{! <span class='helper-text' data-error='Input email'></span> }}
+            </div>
+            <div>
+                <input
+                    id='password'
+                    name='password'
+                    type='password'
+                    class='validate'
+                    required
+                />
+                <label for='password'>Password</label>
+                <span class='helper-text' data-error='Enter password'></span>
+            </div>
+            <div>
+                <input
+                    id='confirm'
+                    name='confirm'
+                    type='password'
+                    class='validate'
+                    required
+                />
+                <label for='confirm'>Repeat password</label>
+                <span class='helper-text' data-error='Repeat password'></span>
+            </div>
+            <div>
+                <input
+                    id='name'
+                    name='name'
+                    type='text'
+                    class='validate'
+                    required
+                />
+                <label for='name'>You name</label>
+                <span class='helper-text' data-error='Enter you name'></span>
+            </div>
+            <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+            <button class='btn btn-primary' type='submit'>Register</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class='widthBlock_LectureAddEdit'>
+    <h4>Edit lecture <strong>"{{lectureTitle}}"</strong></h4>
+    <form
+        class='formPadding'
+        action='/courses/editLectures/{{courseId}}?idLecture={{lectureId}}'
+        method='POST'
+    >
+        <div class='divTitleImg'>
+            <input
+                id='title'
+                name='title'
+                type='text'
+                class='validate'
+                required
+                value='{{lectureTitle}}'
+            />
+            <label for='title'>Name of lecture</label>
+            <span class='helper-text' data-error='Input name of lecture'></span>
+        </div>
+        <div class='divTitleImg'>
+            <input
+                id='img'
+                name='img'
+                type='text'
+                class='validate'
+                required
+                value='{{lectureImg}}'
+            />
+            <label for='img'>URL picture</label>
+            <span class='helper-text' data-error='input URL picture'></span>
+        </div>
+        <div class='liningButton_LectureAddEdit'>
+            <input type='hidden' name='id' value='{{course._id}}' />
+            <a href='/courses/{{courseId}}'>Go back</a>
+            <button type='submit' class='btn btn-primary buttonSave'>Save
+                lecture</button>
+        </div>
+    </form>
+</div>

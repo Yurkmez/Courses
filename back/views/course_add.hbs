@@ -1,0 +1,73 @@
+{{#if error}}
+    <p class='alert'>{{error}}</p>
+{{/if}}
+<div class='widthBlock_CourseAddEdit'>
+    <h3>Add new courses</h3>
+    <form class='formPadding' action='/course_add' method='POST'>
+        <div>
+            <input
+                id='title'
+                name='title'
+                type='text'
+                class='validate'
+                required
+                value='{{data.title}}'
+            />
+            <label for='title'>Name of courses</label>
+            <span class='helper-text' data-error='input name of coure'></span>
+        </div>
+        <div>
+            <input
+                id='price'
+                name='price'
+                type='number'
+                class='validate'
+                required
+                min='1'
+                value='{{data.price}}'
+            />
+            <label for='price'>Price of courses</label>
+            <span class='helper-text' data-error='input prise'></span>
+        </div>
+        <div>
+            <input
+                id='img'
+                name='img'
+                type='text'
+                class='validate'
+                required
+                value='{{data.img}}'
+            />
+            <label for='img'>URL picture</label>
+        </div>
+        <div>
+            <input
+                id='annotation'
+                name='annotation'
+                type='text'
+                class='validate'
+                required
+                value='{{data.annotation}}'
+            />
+            <label for='annotation'>Annotation</label>
+            <span class='helper-text' data-error='input annotation'></span>
+        </div>
+        <div class='description_CourseAddEdit'>
+            <textarea
+                id='description'
+                name='description'
+                type='text'
+                class='validate'
+                required
+                value='{{data.description}}'
+            >{{data.description}}</textarea>
+            <label for='description'>Description</label>
+            <span class='helper-text' data-error='input description'></span>
+        </div>
+        <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+        <div class='liningButton_CourseAddEdit'>
+            <a href='/courses'>Go back</a>
+            <button class='btn btn-primary'>Add course</button>
+        </div>
+    </form>
+</div>

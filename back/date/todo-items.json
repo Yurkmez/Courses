@@ -1,0 +1,17 @@
+[
+    {
+        "id": 1,
+        "text": "Изучить NodeJS",
+        "done": true
+    },
+    {
+        "id": 2,
+        "text": "Изучить ReactJS",
+        "done": true
+    },
+    {
+        "id": 3,
+        "text": "Написать приложение",
+        "done": false
+    }
+]
